@@ -1,4 +1,3 @@
-# mercado_livre/produto/menu.py
 from .criar import create_produto
 from .listar import read_produto
 from .atualizar import update_produto

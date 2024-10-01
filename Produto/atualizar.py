@@ -4,7 +4,7 @@ from bson.objectid import ObjectId
 def update_produto(produto_id):
     mycol = db.produto
     try:
-        produto_id = ObjectId(produto_id)  # Converte o ID para ObjectId
+        produto_id = ObjectId(produto_id)  
     except Exception as e:
         print("ID do produto inválido:", e)
         return

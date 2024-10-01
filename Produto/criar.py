@@ -8,14 +8,14 @@ def create_produto():
     preco = float(input("Preço do produto: "))
     vendedor_id = input("ID do vendedor: ")
 
-    # Converte o ID para ObjectId
+    
     try:
         vendedor_id = ObjectId(vendedor_id)
     except Exception as e:
         print("ID do vendedor inválido:", e)
         return
 
-    # Adiciona o produto ao vendedor
+    
     vendedor_col = db.vendedor
     vendedor = vendedor_col.find_one({"_id": vendedor_id})
     
@@ -31,7 +31,7 @@ def create_produto():
     
     x = mycol.insert_one(mydoc)
     
-    # Atualiza o vendedor para incluir o produto
+    
     vendedor_col.update_one(
         {"_id": vendedor_id},
         {"$push": {"produtos": x.inserted_id}}

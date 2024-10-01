@@ -1,4 +1,6 @@
 from Usuario.menuUsuario import menu_usuarios  
+from Vendedor.menuVendedor import menu_vendedor
+from Produto.menuProduto import menu_produtos
 def main():
     while True:
         print("1-CRUD Usuário")
@@ -12,10 +14,10 @@ def main():
         if key == '1':
             menu_usuarios()  
         elif key == '2':
-            print("Menu do Vendedor")        
+            menu_vendedor()       
             
         elif key == '3':
-            print("Menu do Produto")        
+            menu_produtos()       
            
         elif key == '4':
             print("Menu de Favoritos")

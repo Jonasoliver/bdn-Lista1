@@ -1,8 +1,8 @@
 from conexao import db
+
 def listar_favoritos():
     cpf = input("Digite o CPF do usuário: ")
 
-    # Encontra o usuário pelo CPF
     usuario = db.usuario.find_one({"cpf": cpf})
     if not usuario:
         print("Usuário não encontrado.")

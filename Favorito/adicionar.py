@@ -1,8 +1,6 @@
 from conexao import db
 from bson.objectid import ObjectId
 
-
-
 def adicionar_favorito():
     cpf = input("Digite o CPF do usuário: ")
     produto_id = input("Digite o ID do produto a ser adicionado aos favoritos: ")
@@ -13,13 +11,11 @@ def adicionar_favorito():
         print("ID do produto inválido:", e)
         return
 
-   
     usuario = db.usuario.find_one({"cpf": cpf})
     if not usuario:
         print("Usuário não encontrado.")
         return
 
-    
     db.usuario.update_one(
         {"cpf": cpf},
         {"$addToSet": {"favoritos": produto_id}}  

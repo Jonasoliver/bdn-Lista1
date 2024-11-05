@@ -26,7 +26,8 @@ def create_usuario():
         if input("Deseja cadastrar um novo endereço (S/N)? ").upper() != 'S':
             break
 
-    mydoc = {"nome": nome, "sobrenome": sobrenome, "cpf": cpf, "end": end}
+    # Adicionando o campo "favoritos" inicializado como um array vazio
+    mydoc = {"nome": nome, "sobrenome": sobrenome, "cpf": cpf, "end": end, "favoritos": []}
     x = mycol.insert_one(mydoc)
     print("Documento inserido com ID ", x.inserted_id)
 
